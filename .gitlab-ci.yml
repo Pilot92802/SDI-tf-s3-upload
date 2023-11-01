@@ -1,0 +1,5 @@
+include:
+  template: Terraform.latest.gitlab-ci.yml
+
+terraform-destroy:
+  extends: .terraform-destroy
