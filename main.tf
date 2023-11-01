@@ -28,11 +28,17 @@ resource "aws_s3_bucket" "cjd-learn" {
   }
 }
 
+# output the bucket name
+output "bucket_id" {
+  value = aws_s3_bucket.cjd-learn.id
+}
+
+
 
 ## Create an S3 object to upload "./build/libs/sample.txt"
 
 resource "aws_s3_object" "object" {
-  bucket = var.bucket_name
+  bucket = aws_s3_bucket.cjd-learn.id
   key    = "sample.txt"
   source = var.file_name
 
