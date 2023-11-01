@@ -5,7 +5,10 @@ terraform {
       version = "~> 4.0"
     }
   }
+  backend "http" {
+  }
 }
+
 
 # Configure the AWS Provider
 provider "aws" {
@@ -17,6 +20,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "cjd-learn" {
   bucket = var.bucket_name
+  bucket_prefix = "cjd"
 
   tags = {
     Name        = "CJD bucket"
