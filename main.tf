@@ -19,7 +19,7 @@ provider "aws" {
 ## Create an S3 bucket
 
 resource "aws_s3_bucket" "cjd-learn" {
-  bucket = var.bucket_name
+  #bucket = var.bucket_name
   bucket_prefix = "cjd"
 
   tags = {
